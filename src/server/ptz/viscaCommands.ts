@@ -1,0 +1,6 @@
+import type{Direction,FocusMode}from'./types.js';
+export function moveCommand(direction:Direction,panSpeed=8,tiltSpeed=8){const pan=Math.max(1,Math.min(24,panSpeed)),tilt=Math.max(1,Math.min(20,tiltSpeed));const map:Record<Direction,[number,number]>={up:[3,1],down:[3,2],left:[1,3],right:[2,3],'up-left':[1,1],'up-right':[2,1],'down-left':[1,2],'down-right':[2,2],stop:[3,3]};const[pd,td]=map[direction];return[0x81,0x01,0x06,0x01,pan,tilt,pd,td,0xff]}
+export function zoomCommand(direction:'in'|'out'|'stop',speed=3){const n=Math.max(0,Math.min(7,speed));return[0x81,0x01,0x04,0x07,direction==='in'?0x20+n:direction==='out'?0x30+n:0,0xff]}
+export function focusCommands(mode:FocusMode){if(mode==='auto')return[[0x81,0x01,0x04,0x38,0x02,0xff]];const a=mode==='near'||mode==='far'?[[0x81,0x01,0x04,0x38,0x03,0xff]]:[];const v=mode==='near'?0x03:mode==='far'?0x02:0;return[...a,[0x81,0x01,0x04,0x08,v,0xff]]}
+export const homeCommand=()=>[0x81,0x01,0x06,0x04,0xff];
+export const presetCommand=(p:number,save:boolean)=>[0x81,0x01,0x04,0x3f,save?0x01:0x02,Math.max(0,Math.min(127,p)),0xff];

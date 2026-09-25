@@ -1,0 +1,2 @@
+import{SerialPort}from'serialport';import{ViscaDriverBase}from'./viscaBase.js';
+export class ViscaSerialDriver extends ViscaDriverBase{constructor(private path:string,private baudRate=9600){super()}protected send(bytes:number[]):Promise<void>{return new Promise((resolve,reject)=>{const p=new SerialPort({path:this.path,baudRate:this.baudRate,autoOpen:true});const end=(e?:Error|null)=>p.close(()=>e?reject(e):resolve());p.once('error',reject);p.write(Buffer.from(bytes),e=>e?end(e):p.drain(e2=>end(e2)))})}}
