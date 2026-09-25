@@ -33,4 +33,4 @@ Root: HKCU; Subkey: "Software\Microsoft\Windows\CurrentVersion\Run"; ValueType: 
 [Run]
 Filename: "{sys}\wscript.exe"; Parameters: """{app}\start-server.vbs"""; Flags: nowait postinstall skipifsilent; Description: "Iniciar o servidor PTZ Control Web"
 Filename: "{sys}\wscript.exe"; Parameters: """{app}\open-ptz.vbs"""; Flags: nowait postinstall skipifsilent; Description: "Abrir PTZ Control Web"
-Filename: "{cmd}"; Parameters: "/c start \"\" \"https://www.youtube.com/@CultoemOff\""; Flags: nowait postinstall skipifsilent; Description: "Abrir canal Culto em Off no YouTube"
+Filename: "https://www.youtube.com/@CultoemOff"; Flags: shellexec nowait postinstall skipifsilent; Description: "Abrir canal Culto em Off no YouTube"
