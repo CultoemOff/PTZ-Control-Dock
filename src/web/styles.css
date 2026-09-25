@@ -107,3 +107,6 @@ footer{order:4}
 #general .settingsGrid>.settingCard:nth-child(4){height:100%}
 #general .settingsGrid>.fullRow{grid-column:1/-1}
 #general .gamepadMap{margin-top:12px;padding-top:12px;border-top:1px solid var(--border)}
+
+/* Cross-platform SVG icons: avoid OS-dependent emoji/glyph rendering */
+.iconBtn img,.gamepadIndicator img{width:18px;height:18px;display:block}.navCard b img{width:20px;height:20px;display:block;margin:auto}.lens img,.focusIcon img{width:20px;height:20px;display:block}.iconBtn img,.navCard img,.lens img,.focusIcon img,.gamepadIndicator img{filter:none}
