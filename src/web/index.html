@@ -1,19 +1,11 @@
-<!doctype html>
-<html lang="pt-BR">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>PTZ Control Dock</title><link rel="stylesheet" href="/styles.css"></head>
-<body>
-<main class="dock">
-<header><div><strong>PTZ Control</strong><small>Culto em Off</small></div><button id="theme" title="Alternar tema">◐</button></header>
-<section class="camera"><select id="camera"><option value="">Nenhuma câmera</option></select><span id="status">● OFFLINE</span></section>
-<section class="pad" aria-label="Pan e Tilt">
-<button data-move="up-left">↖</button><button data-move="up">↑</button><button data-move="up-right">↗</button>
-<button data-move="left">←</button><button data-move="stop" class="stop">■</button><button data-move="right">→</button>
-<button data-move="down-left">↙</button><button data-move="down">↓</button><button data-move="down-right">↘</button>
-</section>
-<label>Velocidade <input id="speed" type="range" min="1" max="20" value="8"></label>
-<section class="row"><button data-zoom="out">Zoom −</button><button data-zoom="stop">Stop</button><button data-zoom="in">Zoom +</button></section>
-<section class="presets"><button data-preset="1">1</button><button data-preset="2">2</button><button data-preset="3">3</button><button data-preset="4">4</button></section>
-<section class="row"><button id="home">⌂ Home</button><button id="scan">⌕ Procurar</button><button id="about">Sobre</button></section>
-<dialog id="aboutDialog"><h2>PTZ Control</h2><p>Controle PTZ para OBS Studio.</p><p><strong>Culto em Off</strong></p><p>Versão 0.1.0</p><button id="closeAbout">Fechar</button></dialog>
-</main><script src="/app.js"></script>
-</body></html>
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>PTZ Control</title><link rel="stylesheet" href="/styles.css"></head><body><main class="dock">
+<header><div><strong>PTZ CONTROL</strong><small id="activeName">Nenhuma câmera</small></div><div><button id="theme">◐</button><button id="settings">⚙</button></div></header>
+<section class="control"><div class="pad"><button data-move="up-left">↖</button><button data-move="up">↑</button><button data-move="up-right">↗</button><button data-move="left">←</button><button id="home">⌂</button><button data-move="right">→</button><button data-move="down-left">↙</button><button data-move="down">↓</button><button data-move="down-right">↘</button></div>
+<label>Movimento <input id="speed" type="range" min="1" max="20" value="8"></label><div class="zoom"><button data-zoom="out">− ZOOM</button><button data-zoom="in">ZOOM +</button></div></section>
+<div class="sectionTitle"><span>MEMÓRIAS</span><small>clique: chamar • botão direito: editar</small></div><section id="presets" class="presets"></section>
+<div class="sectionTitle"><span>CÂMERAS</span><small id="cameraCount"></small></div><section id="cameras" class="cameras"></section>
+<footer>Culto em Off <button id="about">Sobre</button></footer>
+<dialog id="settingsDialog"><h2>Configurações</h2><label>Quantidade de memórias <select id="presetCount"><option>8</option><option>12</option><option>16</option><option>20</option><option>24</option></select></label><button id="scan">⌕ Procurar câmeras na rede</button><button class="close">Fechar</button></dialog>
+<dialog id="presetDialog"><h2 id="presetTitle">Memória</h2><input id="presetName" maxlength="24" placeholder="Nome da posição"><div class="dialogActions"><button id="savePosition">Salvar posição atual</button><button id="clearPreset" class="danger">Limpar</button></div><button class="close">Cancelar</button></dialog>
+<dialog id="aboutDialog"><h2>PTZ Control</h2><p>Controle PTZ para OBS Studio.</p><p><strong>Desenvolvido por Culto em Off</strong></p><p>Versão 0.2.0</p><button class="close">Fechar</button></dialog>
+</main><script src="/app.js"></script></body></html>
