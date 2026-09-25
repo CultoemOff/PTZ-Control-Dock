@@ -1,20 +1,62 @@
-# PTZ Control Dock
+# PTZ Control Web
 
-Controle PTZ para OBS Studio, desenvolvido pelo **Culto em Off**.
+**Controle câmeras PTZ diretamente pelo navegador, dentro do seu software de produção ou como painel independente.**
 
-> Estado atual: fundação da V0.1. O painel web e o transporte VISCA over IP já estão estruturados; NDI, ONVIF, OBS WebSocket e Companion entram nas próximas etapas.
+[Português](README.md) · [English](README.en.md) · [Español](README.es.md)
 
-## Objetivos
+O **PTZ Control Web**, desenvolvido pelo **Culto em Off**, é uma interface web local para controle de câmeras PTZ. Ele foi pensado para igrejas, transmissões ao vivo, produções audiovisuais e equipes que precisam de um controle simples, compacto e independente da versão do software de produção.
 
-- Dock web compacto para OBS Studio
-- Temas claro, escuro e automático
-- Descoberta rápida de câmeras na rede
-- VISCA over IP (UDP/TCP), NDI PTZ e ONVIF
-- Pan/Tilt, zoom, foco, autofocus, home e presets
-- Múltiplas câmeras e reconexão
-- Integração OBS WebSocket
-- API REST/WebSocket para Bitfocus Companion
-- Aplicativo/instalador Windows para usuários leigos
+## Onde funciona
+
+A interface roda no navegador e pode ser usada:
+
+- como **Custom Browser Dock no OBS Studio**;
+- dentro do **SPresenter**, quando utilizado como painel/página web;
+- junto com o **vMix**, mantendo o controle PTZ aberto no navegador;
+- ou **por fora de qualquer software**, diretamente no navegador.
+
+Como o controle não depende de um plugin interno do OBS Studio, uma atualização de versão do OBS não interrompe o funcionamento do PTZ Control Web. No OBS, ele utiliza apenas o recurso de navegador/Custom Browser Dock para exibir a interface.
+
+## Funcionalidades
+
+- Controle de **Pan, Tilt, Zoom e Focus**.
+- Movimento diagonal e comando **Home**.
+- **Autofocus**, Focus Near e Focus Far.
+- Velocidade de Pan/Tilt ajustável.
+- **Presets de câmera** com chamada e gravação de posição.
+- Nomes personalizados para os presets.
+- Suporte a múltiplas câmeras.
+- Interface em **Português, Inglês, Espanhol e Alemão**.
+- Tema claro e escuro.
+- Quantidade de presets configurável.
+- Layout dos presets em **vertical ou horizontal**.
+- Possibilidade de ocultar os controles PTZ e usar a interface principalmente como painel de presets.
+- **Controle por gamepad/controle de videogame USB**, incluindo Pan/Tilt, Zoom, Focus, Autofocus, seleção, chamada e gravação de presets.
+- **Integração com Bitfocus Companion via HTTP**, permitindo criar botões no Stream Deck para movimento, Zoom, Focus, Home e presets.
+- Configurações de câmeras e nomes dos presets persistidos no computador.
+- Interface responsiva para diferentes tamanhos de painel.
+
+## Protocolos
+
+Atualmente o projeto possui suporte a **VISCA over IP UDP**, **VISCA over IP TCP** e **VISCA USB/Serial**. A estrutura para ONVIF está presente, mas o driver ONVIF ainda não está disponível.
+
+## Bitfocus Companion
+
+O servidor disponibiliza uma API HTTP específica para integração com o Companion. É possível controlar câmera por número, UUID ou nome e criar ações para movimento, parada, Zoom, Focus, Autofocus, Home, chamar preset e salvar preset.
+
+Exemplo:
+
+```text
+POST /api/companion/camera/1/preset/0/recall
+POST /api/companion/camera/1/move/up?speed=8
+POST /api/companion/camera/1/move/stop
+```
+
+Isso permite configurar ações de **pressionar e soltar** no Companion para movimentar a câmera enquanto o botão estiver pressionado.
+
+## Controle USB / Gamepad
+
+Um controle de videogame pode ser usado diretamente pelo navegador. O mapeamento atual inclui joystick para Pan/Tilt, gatilhos para Zoom, botões superiores para Focus, direcional para navegar pelos presets e botões para chamar, salvar e acionar Autofocus.
 
 ## Desenvolvimento
 
@@ -25,18 +67,22 @@ npm install
 npm run dev
 ```
 
-Abra `http://127.0.0.1:8765/obs`.
+Abra:
+
+```text
+http://127.0.0.1:8765/obs
+```
 
 ## Estrutura
 
-- `src/server`: servidor local, API e motores PTZ
-- `src/web`: interface do Dock
-- `docs`: arquitetura e roadmap
+- `src/server`: servidor local, API e drivers PTZ.
+- `src/web`: interface web.
+- `docs`: arquitetura e documentação.
 
 ## Segurança
 
-Por padrão o servidor escuta somente em `127.0.0.1`. Acesso pela LAN para tablet/Companion será uma opção explícita posteriormente.
+Por padrão, o servidor escuta somente em `127.0.0.1`, mantendo a interface e a API acessíveis apenas no computador onde o PTZ Control Web está sendo executado.
 
 ## Sobre
 
-Projeto Culto em Off. O link oficial do YouTube será configurado na tela Sobre antes da primeira release pública.
+Projeto criado por **Jonas — Culto em Off**, com foco em compartilhar ferramentas e soluções para áudio, vídeo, transmissão e tecnologia.
