@@ -41,6 +41,21 @@ jobs:
           Push-Location package\app
           npm install --omit=dev
           Pop-Location
+      - name: Generate Windows icon
+        shell: pwsh
+        run: |
+          Add-Type -AssemblyName System.Drawing
+          $pngPath = "assets\logo-source.png"
+          $icoPath = "assets\ptz-control-web.ico"
+          if (-not (Test-Path $pngPath)) { throw "Logo source not found: $pngPath" }
+          $bmp = [System.Drawing.Bitmap]::FromFile((Resolve-Path $pngPath))
+          $icon = [System.Drawing.Icon]::FromHandle($bmp.GetHicon())
+          $fs = [System.IO.File]::Create($icoPath)
+          $icon.Save($fs)
+          $fs.Close()
+          $icon.Dispose()
+          $bmp.Dispose()
+
       - name: Build installer
         shell: pwsh
         run: |
