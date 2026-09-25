@@ -73,3 +73,19 @@
   .settingCard h3{font-size:10px}
   .settingHelp{font-size:8px}
 }
+
+/* Vertical layout: camera selector comes before preset memory bank */
+.workspace:not(.right) + .cameraPanel{order:2}
+.workspace:not(.right){order:3}
+header{order:1}
+footer{order:4}
+/* Active camera is unmistakable; inactive cameras stay neutral */
+.cameraItem{font-weight:400}
+.cameraItem b{font-weight:400}
+.cameraItem.active{border-color:var(--accent);background:var(--accent);color:#fff;font-weight:700}
+.cameraItem.active b{font-weight:800}
+.cameraItem.active small{color:rgba(255,255,255,.82)}
+.cameraItem.active .dot{color:#fff}
+/* Horizontal layout keeps the established workspace/camera flow */
+.workspace.right{order:2}
+.workspace.right + .cameraPanel{order:3}
