@@ -46,3 +46,30 @@
   .settingsNav span{display:none}
   .navCard b{font-size:16px}
 }
+/* Responsive settings dialog: prevent horizontal overflow in narrow OBS docks */
+#settingsDialog{max-width:calc(100vw - 12px);overflow-x:hidden}
+#settingsDialog .settingsPage,#settingsDialog .settingsGrid,#settingsDialog .settingCard{min-width:0}
+#settingsDialog select,#settingsDialog input{max-width:100%;min-width:0}
+#settingsDialog .settingHelp{overflow-wrap:anywhere;word-break:normal}
+@media(max-width:460px){
+  #settingsDialog{width:calc(100vw - 10px)}
+  .settingsHead{padding-left:12px;padding-right:12px}
+  .settingsNav{grid-template-columns:repeat(3,minmax(0,1fr));padding-left:12px;padding-right:12px}
+  .navCard{min-width:0;padding-left:4px;padding-right:4px}
+  .navCard span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .settingsPage{padding-left:12px;padding-right:12px}
+  .settingsGrid{grid-template-columns:minmax(0,1fr)}
+  .settingCard{width:100%;overflow:hidden}
+  .switchRow{grid-template-columns:minmax(0,1fr) auto!important}
+  .switchRow span{min-width:0;overflow-wrap:anywhere}
+  .controllerMap{width:100%;max-width:100%}
+}
+@media(max-width:300px){
+  .settingsHead h2{font-size:18px}
+  .settingsHead small{font-size:7px}
+  .settingsNav{gap:3px}
+  .navCard{padding:6px 2px}
+  .navCard span{font-size:8px}
+  .settingCard h3{font-size:10px}
+  .settingHelp{font-size:8px}
+}
