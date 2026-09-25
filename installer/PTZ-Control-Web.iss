@@ -19,16 +19,21 @@ WizardStyle=modern
 UninstallDisplayName={#MyAppName}
 ArchitecturesAllowed=x64compatible
 ArchitecturesInstallIn64BitMode=x64compatible
+SetupIconFile=assets\ptz-control-web.ico
+UninstallDisplayIcon={app}\ptz-control-web.ico
 
 [Files]
+Source: "assets\ptz-control-web.ico"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\package\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 
 [Icons]
-Name: "{autodesktop}\PTZ Control Web"; Filename: "{sys}\wscript.exe"; Parameters: """{app}\open-ptz.vbs"""; WorkingDir: "{app}"
-Name: "{group}\PTZ Control Web"; Filename: "{sys}\wscript.exe"; Parameters: """{app}\open-ptz.vbs"""; WorkingDir: "{app}"
+Name: "{autodesktop}\PTZ Control Web"; Filename: "{sys}\wscript.exe"; Parameters: """{app}\open-ptz.vbs"""; WorkingDir: "{app}"; IconFilename: "{app}\ptz-control-web.ico"
+Name: "{group}\PTZ Control Web"; Filename: "{sys}\wscript.exe"; Parameters: """{app}\open-ptz.vbs"""; WorkingDir: "{app}"; IconFilename: "{app}\ptz-control-web.ico"
 
 [Registry]
 Root: HKCU; Subkey: "Software\Microsoft\Windows\CurrentVersion\Run"; ValueType: string; ValueName: "PTZ Control Web"; ValueData: """{sys}\wscript.exe"" ""{app}\start-server.vbs"""; Flags: uninsdeletevalue
 
 [Run]
 Filename: "{sys}\wscript.exe"; Parameters: """{app}\start-server.vbs"""; Flags: nowait postinstall skipifsilent; Description: "Iniciar o servidor PTZ Control Web"
+Filename: "{sys}\wscript.exe"; Parameters: """{app}\open-ptz.vbs"""; Flags: nowait postinstall skipifsilent; Description: "Abrir PTZ Control Web"
+Filename: "{cmd}"; Parameters: "/c start \"\" \"https://www.youtube.com/@CultoemOff\""; Flags: nowait postinstall skipifsilent; Description: "Abrir canal Culto em Off no YouTube"
