@@ -139,5 +139,6 @@ footer{order:4}
 :root[data-theme=dark] .pad .home img{filter:brightness(0) invert(1)}
 .controls button.gamepadControlActive img,.home.gamepadControlActive img{filter:brightness(0) invert(1)!important}
 
-/* Camera deletion */
-.settingsCameraRow{display:grid;grid-template-columns:minmax(0,1fr) 38px;gap:5px;min-width:0}.settingsCameraRow .settingsCamera{width:100%;min-width:0}.deleteCamera{display:grid;place-items:center;padding:7px;color:var(--danger);background:var(--panel2)}.deleteCamera img{width:17px;height:17px;display:block;filter:brightness(0) saturate(100%)}:root[data-theme=dark] .deleteCamera img{filter:brightness(0) invert(1)}.deleteCamera:hover{border-color:var(--danger);background:color-mix(in srgb,var(--danger) 12%,var(--panel2))}.deleteCamera:hover img{filter:none}
+
+/* Camera deletion: trash action lives inside each camera card */
+.settingsCamera{position:relative;width:100%;padding-right:42px;display:block}.settingsCameraInfo{display:block;min-width:0}.settingsCameraInfo b,.settingsCameraInfo small{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.deleteCamera{position:absolute;right:7px;top:50%;transform:translateY(-50%);width:28px;height:28px;display:grid;place-items:center;border-radius:7px;color:var(--icon);opacity:.75}.deleteCamera img{width:16px;height:16px;display:block;filter:brightness(0)}:root[data-theme=dark] .deleteCamera img{filter:brightness(0) invert(1)}.deleteCamera:hover{background:color-mix(in srgb,var(--danger) 16%,transparent);opacity:1}.deleteCamera:hover img{filter:none}
