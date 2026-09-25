@@ -110,3 +110,31 @@ footer{order:4}
 
 /* Cross-platform SVG icons: avoid OS-dependent emoji/glyph rendering */
 .iconBtn img,.gamepadIndicator img{width:18px;height:18px;display:block}.navCard b img{width:20px;height:20px;display:block;margin:auto}.lens img,.focusIcon img{width:20px;height:20px;display:block}.iconBtn img,.navCard img,.lens img,.focusIcon img,.gamepadIndicator img{filter:none}
+
+/* Unified monochrome icon system */
+:root{--icon:#000}
+:root[data-theme=dark]{--icon:#fff}
+.iconBtn,.gamepadIndicator,.navCard b,.lens,.focusIcon,.layoutToggle{color:var(--icon)}
+.iconBtn img,.gamepadIndicator img,.navCard b img,.lens img,.focusIcon img{
+  filter:none;
+  color:var(--icon);
+}
+/* External SVG files use currentColor internally, but <img> cannot inherit it.
+   Force the complete icon set to black in light mode and white in dark mode. */
+:root:not([data-theme=dark]) .iconBtn img,
+:root:not([data-theme=dark]) .gamepadIndicator img,
+:root:not([data-theme=dark]) .navCard b img,
+:root:not([data-theme=dark]) .lens img,
+:root:not([data-theme=dark]) .focusIcon img{filter:brightness(0)}
+:root[data-theme=dark] .iconBtn img,
+:root[data-theme=dark] .gamepadIndicator img,
+:root[data-theme=dark] .navCard b img,
+:root[data-theme=dark] .lens img,
+:root[data-theme=dark] .focusIcon img{filter:brightness(0) invert(1)}
+.navCard.active b img{filter:brightness(0) invert(1)!important}
+
+/* Keep Home SVG centered and fixed-size even when the PTZ panel stretches */
+.pad .home{display:flex;align-items:center;justify-content:center;min-width:0;padding:0}
+.pad .home img{display:block;width:22px;height:22px;min-width:22px;min-height:22px;max-width:22px;max-height:22px;object-fit:contain;flex:0 0 22px;filter:brightness(0)}
+:root[data-theme=dark] .pad .home img{filter:brightness(0) invert(1)}
+.controls button.gamepadControlActive img,.home.gamepadControlActive img{filter:brightness(0) invert(1)!important}
