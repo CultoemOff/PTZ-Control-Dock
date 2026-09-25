@@ -45,6 +45,24 @@ Como o controle não depende de um plugin interno do OBS Studio, uma atualizaç�
 
 *Gerenciamento de câmeras: cadastro e edição de nome, protocolo, IP/Host, porta, velocidade, presets e inversão de Pan/Tilt.*
 
+## Capturas de tela
+
+**Layout horizontal — controles PTZ e painel de presets lado a lado.**
+
+![PTZ Control Web em layout horizontal](docs/screenshots/layout-horizontal.webp)
+
+**Layout vertical — câmeras, controles PTZ e presets organizados para painéis estreitos.**
+
+![PTZ Control Web em layout vertical](docs/screenshots/layout-vertical.webp)
+
+**Configurações gerais — idioma, layout, aparência, presets, controles PTZ e gamepad.**
+
+![Configurações gerais do PTZ Control Web](docs/screenshots/settings-general.webp)
+
+**Gerenciamento de câmeras — cadastro, edição e exclusão das câmeras PTZ.**
+
+![Gerenciamento de câmeras do PTZ Control Web](docs/screenshots/settings-cameras.webp)
+
 ## Funcionalidades
 
 - Controle de **Pan, Tilt, Zoom e Focus**.
