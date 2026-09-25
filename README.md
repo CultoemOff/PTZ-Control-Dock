@@ -1,10 +1,12 @@
-# PTZ Control Web
+# PTZ Control Web — by Culto em Off
+
+**PTZ Control Web – Free PTZ Camera Controller for OBS, vMix & SPresenter**
 
 **Controle câmeras PTZ diretamente pelo navegador, dentro do seu software de produção ou como painel independente.**
 
 [Português](README.md) · [English](README.en.md) · [Español](README.es.md)
 
-O **PTZ Control Web**, desenvolvido pelo **Culto em Off**, é uma interface web local para controle de câmeras PTZ. Ele foi pensado para igrejas, transmissões ao vivo, produções audiovisuais e equipes que precisam de um controle simples, compacto e independente da versão do software de produção.
+O **PTZ Control Web — by Culto em Off** é uma interface web local para controle de câmeras PTZ. Ele foi pensado para igrejas, transmissões ao vivo, produções audiovisuais e equipes que precisam de um controle simples, compacto e independente da versão do software de produção.
 
 ## Onde funciona
 
@@ -85,4 +87,11 @@ Por padrão, o servidor escuta somente em `127.0.0.1`, mantendo a interface e a 
 
 ## Sobre
 
-Projeto criado por **Jonas — Culto em Off**, com foco em compartilhar ferramentas e soluções para áudio, vídeo, transmissão e tecnologia.
+**PTZ Control Web — by Culto em Off**, projeto criado por **Jonas**, com foco em compartilhar ferramentas e soluções para áudio, vídeo, transmissão e tecnologia.
+
+
+## 🔎 PTZ camera controller
+
+PTZ Control Web é um controlador gratuito de câmeras PTZ baseado em navegador para **OBS Studio, vMix e SPresenter**, com suporte a **VISCA over IP (UDP/TCP)**, **VISCA USB/Serial**, presets, Pan/Tilt/Zoom, foco, controle USB/Gamepad e integração HTTP com **Bitfocus Companion**. Pode funcionar como controlador PTZ standalone no navegador ou dentro do OBS Studio como Custom Browser Dock.
+
+**Keywords:** PTZ controller, PTZ camera controller, PTZ web controller, OBS PTZ controller, VISCA controller, VISCA over IP, USB PTZ controller, Bitfocus Companion PTZ, vMix PTZ, SPresenter PTZ, church livestream PTZ.
