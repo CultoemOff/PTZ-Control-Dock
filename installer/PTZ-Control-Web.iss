@@ -19,11 +19,11 @@ WizardStyle=modern
 UninstallDisplayName={#MyAppName}
 ArchitecturesAllowed=x64compatible
 ArchitecturesInstallIn64BitMode=x64compatible
-SetupIconFile=assets\ptz-control-web.ico
+SetupIconFile=..\assets\ptz-control-web.ico
 UninstallDisplayIcon={app}\ptz-control-web.ico
 
 [Files]
-Source: "assets\ptz-control-web.ico"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\assets\ptz-control-web.ico"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\package\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 
 [Icons]
