@@ -1,0 +1,52 @@
+name: Windows Installer
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+    paths:
+      - "src/**"
+      - "package.json"
+      - "package-lock.json"
+      - "tsconfig.json"
+      - "installer/**"
+      - "scripts/windows/**"
+      - ".github/workflows/windows-installer.yml"
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Typecheck
+        run: npm run typecheck
+      - name: Build TypeScript
+        run: npm run build
+      - name: Prepare portable application
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force package\app\dist\web | Out-Null
+          New-Item -ItemType Directory -Force package\runtime | Out-Null
+          Copy-Item -Recurse -Force dist\* package\app\dist\
+          Copy-Item -Recurse -Force src\web\* package\app\dist\web\
+          Copy-Item package.json,package-lock.json package\app\
+          Copy-Item scripts\windows\start-server.vbs,scripts\windows\open-ptz.vbs package\
+          Copy-Item "$env:ProgramFiles\nodejs\node.exe" package\runtime\node.exe
+          Push-Location package\app
+          npm ci --omit=dev
+          Pop-Location
+      - name: Build installer
+        shell: pwsh
+        run: |
+          & "$env:ProgramFiles(x86)\Inno Setup 6\ISCC.exe" installer\PTZ-Control-Web.iss
+      - uses: actions/upload-artifact@v4
+        with:
+          name: PTZ-Control-Web-Setup
+          path: installer/output/PTZ-Control-Web-Setup.exe
+          if-no-files-found: error
