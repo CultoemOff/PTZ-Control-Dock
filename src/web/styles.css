@@ -138,3 +138,6 @@ footer{order:4}
 .pad .home img{display:block;width:22px;height:22px;min-width:22px;min-height:22px;max-width:22px;max-height:22px;object-fit:contain;flex:0 0 22px;filter:brightness(0)}
 :root[data-theme=dark] .pad .home img{filter:brightness(0) invert(1)}
 .controls button.gamepadControlActive img,.home.gamepadControlActive img{filter:brightness(0) invert(1)!important}
+
+/* Camera deletion */
+.settingsCameraRow{display:grid;grid-template-columns:minmax(0,1fr) 38px;gap:5px;min-width:0}.settingsCameraRow .settingsCamera{width:100%;min-width:0}.deleteCamera{display:grid;place-items:center;padding:7px;color:var(--danger);background:var(--panel2)}.deleteCamera img{width:17px;height:17px;display:block;filter:brightness(0) saturate(100%)}:root[data-theme=dark] .deleteCamera img{filter:brightness(0) invert(1)}.deleteCamera:hover{border-color:var(--danger);background:color-mix(in srgb,var(--danger) 12%,var(--panel2))}.deleteCamera:hover img{filter:none}
