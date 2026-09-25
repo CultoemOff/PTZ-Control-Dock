@@ -24,4 +24,11 @@ if(-not (Test-Path $exe)){$exe=Join-Path $here 'bin\ndi-ptz-bridge.exe'}
 if(-not (Test-Path $exe)){throw 'Build completed but ndi-ptz-bridge.exe was not found.'}
 $target=Join-Path $here 'bin\ndi-ptz-bridge.exe'
 if($exe -ne $target){Copy-Item $exe $target -Force}
+$ndiDll=Join-Path $SdkDir 'Bin\x64\Processing.NDI.Lib.x64.dll'
+if(-not (Test-Path $ndiDll)){
+  $ndiDll='C:\Program Files\NDI\NDI 6 Runtime\v6\Processing.NDI.Lib.x64.dll'
+}
+if(-not (Test-Path $ndiDll)){throw 'Processing.NDI.Lib.x64.dll was not found in the NDI SDK or NDI 6 Runtime.'}
+Copy-Item $ndiDll (Join-Path $here 'bin\Processing.NDI.Lib.x64.dll') -Force
+Write-Host "NDI runtime DLL copied beside bridge." -ForegroundColor Green
 Write-Host "NDI PTZ bridge ready: $target" -ForegroundColor Green
