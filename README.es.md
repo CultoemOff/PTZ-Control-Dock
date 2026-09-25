@@ -95,3 +95,11 @@ Creado por **Jonas — Culto em Off**, con el objetivo de compartir herramientas
 PTZ Control Web es un controlador web gratuito de cámaras PTZ para **OBS Studio, vMix y SPresenter**, compatible con **VISCA over IP (UDP/TCP)**, **VISCA USB/Serial**, presets, Pan/Tilt/Zoom, enfoque, gamepad USB e integración HTTP con **Bitfocus Companion**. Puede utilizarse como controlador PTZ independiente en el navegador o dentro de OBS Studio como Custom Browser Dock.
 
 **Keywords:** PTZ controller, PTZ camera controller, PTZ web controller, OBS PTZ controller, VISCA controller, VISCA over IP, USB PTZ controller, Bitfocus Companion PTZ, vMix PTZ, SPresenter PTZ.
+
+## 🎥 Sobre Culto em Off
+
+**Culto em Off** es un canal dedicado a compartir conocimientos prácticos sobre **audio, video, transmisión en vivo y tecnología para iglesias**. El contenido abarca consolas de sonido y audio en vivo, OBS Studio y streaming, cámaras y PTZ, NDI, iluminación y automatización, REAPER, Holyrics, SPresenter, redes, integración de equipos y tutoriales de herramientas utilizadas detrás de escena en cultos y eventos.
+
+El objetivo es ayudar a voluntarios, operadores y equipos técnicos a comprender mejor la tecnología que utilizan y encontrar soluciones prácticas para el trabajo diario.
+
+▶️ **YouTube:** https://www.youtube.com/@CultoemOff
