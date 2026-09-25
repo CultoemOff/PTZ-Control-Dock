@@ -101,3 +101,9 @@ footer{order:4}
 /* Compact General settings: Language + Layout, Appearance + Presets */
 #general .settingsGrid{grid-template-columns:repeat(2,minmax(0,1fr));align-items:start}
 @media(max-width:360px){#general .settingsGrid{grid-template-columns:minmax(0,1fr)}}
+
+/* General settings card alignment and full-width control sections */
+#general .settingsGrid>.settingCard:nth-child(3),
+#general .settingsGrid>.settingCard:nth-child(4){height:100%}
+#general .settingsGrid>.fullRow{grid-column:1/-1}
+#general .gamepadMap{margin-top:12px;padding-top:12px;border-top:1px solid var(--border)}
