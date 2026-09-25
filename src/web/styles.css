@@ -97,3 +97,7 @@ footer{order:4}
 .layoutToggle{display:grid;place-items:center}.layoutIcon{width:21px;height:17px;border:2px solid currentColor;border-radius:5px;display:grid;overflow:hidden;padding:0}.layoutIcon i{display:block;background:transparent}.layoutVertical{grid-template-columns:1fr 1fr}.layoutVertical i+ i{border-left:2px solid currentColor}.layoutHorizontal{grid-template-rows:1fr 1fr}.layoutHorizontal i+ i{border-top:2px solid currentColor}
 
 .memoryPanel.hidden{display:none!important}.workspace.right.presetsHidden{grid-template-columns:1fr}.workspace.presetsHidden.controlsHidden{display:none}
+
+/* Compact General settings: Language + Layout, Appearance + Presets */
+#general .settingsGrid{grid-template-columns:repeat(2,minmax(0,1fr));align-items:start}
+@media(max-width:360px){#general .settingsGrid{grid-template-columns:minmax(0,1fr)}}
