@@ -87,5 +87,5 @@ footer{order:4}
 .cameraItem.active small{color:rgba(255,255,255,.82)}
 .cameraItem.active .dot{color:#fff}
 /* Horizontal layout keeps the established workspace/camera flow */
-.workspace.right{order:2}
-.workspace.right + .cameraPanel{order:3}
+.workspace.right + .cameraPanel{order:2}
+.workspace.right{order:3}
