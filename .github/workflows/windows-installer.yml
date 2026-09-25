@@ -10,6 +10,7 @@ on:
       - "package-lock.json"
       - "tsconfig.json"
       - "installer/**"
+      - "assets/**"
       - "scripts/windows/**"
       - ".github/workflows/windows-installer.yml"
 
