@@ -2,7 +2,7 @@
   "name": "ptz-control-web",
   "version": "0.5.0",
   "private": true,
-  "description": "PTZ Control Web for OBS Studio by Culto em Off",
+  "description": "PTZ Control Web — by Culto em Off | Free PTZ Camera Controller for OBS, vMix & SPresenter",
   "type": "module",
   "scripts": {
     "dev": "tsx watch src/server/index.ts",
