@@ -19,6 +19,32 @@ A interface roda no navegador e pode ser usada:
 
 Como o controle não depende de um plugin interno do OBS Studio, uma atualização de versão do OBS não interrompe o funcionamento do PTZ Control Web. No OBS, ele utiliza apenas o recurso de navegador/Custom Browser Dock para exibir a interface.
 
+## Interface
+
+### Layout horizontal
+
+![PTZ Control Web em layout horizontal, com controles PTZ à esquerda e presets à direita](docs/screenshots/layout-horizontal.webp)
+
+*Layout horizontal: controles PTZ à esquerda e painel de presets à direita.*
+
+### Layout vertical
+
+![PTZ Control Web em layout vertical, com câmeras, controles PTZ e presets](docs/screenshots/layout-vertical.webp)
+
+*Layout vertical: seleção de câmeras, controles PTZ e presets organizados em sequência.*
+
+### Configurações gerais
+
+![Tela de configurações gerais do PTZ Control Web](docs/screenshots/settings-general.webp)
+
+*Configurações gerais: idioma, layout, aparência, quantidade/visibilidade de presets, controles PTZ e gamepad USB.*
+
+### Gerenciamento de câmeras
+
+![Tela de gerenciamento e configuração de câmeras PTZ](docs/screenshots/settings-cameras.webp)
+
+*Gerenciamento de câmeras: cadastro e edição de nome, protocolo, IP/Host, porta, velocidade, presets e inversão de Pan/Tilt.*
+
 ## Funcionalidades
 
 - Controle de **Pan, Tilt, Zoom e Focus**.
